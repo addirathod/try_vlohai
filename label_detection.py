@@ -18,7 +18,7 @@ import numpy as np
 import argparse
 import imutils
 import time
-import dlib
+#import dlib
 import cv2
 
 # construct the argument parse and parse the arguments
