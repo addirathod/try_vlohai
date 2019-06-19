@@ -87,7 +87,7 @@ totalUp = 0
 #while True:
 # grab the next frame and handle if we are reading from either
 # VideoCapture or VideoStream
-frame = cv2.imread('hello.png')
+frame = cv2.imread('pic.jpg')
 #frame = frame[1] if args.get("input", False) else frame
 
 '''# if we are viewing a video and we did not grab a frame then we
