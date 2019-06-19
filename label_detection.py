@@ -139,7 +139,7 @@ status = "Waiting"
 rects = []
 
 # check to see if we should run a more computationally expensive
-# object detection method to aid our tracker'''
+# object detection method to aid our tracker
 
 if totalFrames % args["skip_frames"] == 0:
   # set the status and initialize our new set of object trackers
