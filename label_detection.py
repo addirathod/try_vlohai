@@ -116,11 +116,11 @@ for i in np.arange(0, detections.shape[2]):
 
 	# filter out weak detections by requiring a minimum
 	# confidence
-	if confidence > args["confidence"]:
+	#if confidence > args["confidence"]:
 	# extract the index of the class label from the
 	# detections list
 	idx = int(detections[0, 0, i, 1])
-	print(CLASSES[idx])
+	print(CLASSES[idx], confidence)
 # if the class label is not a person, ignore it
 #if CLASSES[idx] != "person":
 # continue
