@@ -112,15 +112,15 @@ detections = net.forward()
 for i in np.arange(0, detections.shape[2]):
 # extract the confidence (i.e., probability) associated
 # with the prediction
-confidence = detections[0, 0, i, 2]
+	confidence = detections[0, 0, i, 2]
 
-# filter out weak detections by requiring a minimum
-# confidence
-if confidence > args["confidence"]:
-# extract the index of the class label from the
-# detections list
-idx = int(detections[0, 0, i, 1])
-print(CLASSES[idx])
+	# filter out weak detections by requiring a minimum
+	# confidence
+	if confidence > args["confidence"]:
+	# extract the index of the class label from the
+	# detections list
+	idx = int(detections[0, 0, i, 1])
+	print(CLASSES[idx])
 # if the class label is not a person, ignore it
 #if CLASSES[idx] != "person":
 # continue
