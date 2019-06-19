@@ -105,25 +105,25 @@ rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 if W is None or H is None:
   (H, W) = frame.shape[:2]
 blob = cv2.dnn.blobFromImage(frame, 0.007843, (W, H), 127.5)
-  net.setInput(blob)
-  detections = net.forward()
+net.setInput(blob)
+detections = net.forward()
 
-  # loop over the detections
-  for i in np.arange(0, detections.shape[2]):
-    # extract the confidence (i.e., probability) associated
-    # with the prediction
-    confidence = detections[0, 0, i, 2]
+# loop over the detections
+for i in np.arange(0, detections.shape[2]):
+# extract the confidence (i.e., probability) associated
+# with the prediction
+confidence = detections[0, 0, i, 2]
 
-    # filter out weak detections by requiring a minimum
-    # confidence
-    if confidence > args["confidence"]:
-      # extract the index of the class label from the
-      # detections list
-      idx = int(detections[0, 0, i, 1])
-      print(CLASSES[idx])
-      # if the class label is not a person, ignore it
-      #if CLASSES[idx] != "person":
-       # continue
+# filter out weak detections by requiring a minimum
+# confidence
+if confidence > args["confidence"]:
+# extract the index of the class label from the
+# detections list
+idx = int(detections[0, 0, i, 1])
+print(CLASSES[idx])
+# if the class label is not a person, ignore it
+#if CLASSES[idx] != "person":
+# continue
 
 '''# if we are supposed to be writing a video to disk, initialize
 # the writer
